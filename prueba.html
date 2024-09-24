@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notificación de Error</title>
+  <style>
+    /* Estilos para el contenedor del modal */
+    #errorModal {
+      display: flex; /* Mostrar el modal con flexbox */
+      position: fixed;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+      z-index: 9999;
+      visibility: hidden; /* Oculto inicialmente */
+    }
+
+    /* Estilos para el contenido del modal */
+    .modal-content {
+      background-color: #024d9a;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      font-family: Arial, sans-serif;
+    }
+
+    /* Estilos del mensaje de error */
+    .modal-content h2 {
+      color: #f44336; /* Color rojo */
+      margin-bottom: 20px;
+    }
+
+    /* Estilos de la imagen */
+    .modal-content img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 20px;
+    }
+
+    /* Estilos del botón */
+    .modal-content button {
+      background-color: #feee5a ; /* Verde para el botón de continuar */
+      color: #0a4989;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .modal-content button:hover {
+      background-color: #feee5a ; /* Oscurecer el color al pasar el mouse */
+    }
+
+    p {
+         color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="errorModal">
+    <div class="modal-content">
+      <!-- Imagen de error -->
+      <img src="banpais_logo_1.png" width="100px" alt="Icono de error">
+      
+      <h2>CREDENCIALES INCORRECTAS</h2>
+      <p>Haz ingresado incorrectamente tus credenciales. Por favor, vuelve a intentarlo </p>
+      <button id="continueButton">Continuar</button>
+    </div>
+  </div>
+
+  <!-- Contenido de la página -->
+  <h1>Bienvenido</h1>
+  <p>Esta es una página de ejemplo.</p>
+
+  <script>
+    // Simulamos un error antes de que la página cargue completamente
+    window.addEventListener('DOMContentLoaded', (event) => {
+      const showError = true; // Variable para controlar si se muestra el error
+
+      if (showError) {
+        // Mostramos el modal de error
+        const errorModal = document.getElementById('errorModal');
+        errorModal.style.visibility = 'visible'; // Mostrar el modal
+
+        // Manejamos el botón para cerrar el modal
+        const continueButton = document.getElementById('continueButton');
+        continueButton.addEventListener('click', () => {
+          errorModal.style.visibility = 'hidden'; // Ocultar el modal al hacer clic en continuar
+        });
+      }
+    });
+  </script>
+</body>
+</html>

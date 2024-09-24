@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - Datos Incorrectos</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: #f0f0f0;
+            flex-direction: column;
+        }
+        .header {
+            background-color: #024d9a;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .header img {
+            max-height: 50px;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            margin-top: 100px; /* Space for header */
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+        }
+        .content p {
+            margin: 20px 0;
+            color: #555;
+            font-size: 16px;
+        }
+        .retry-button {
+            background-color: #024d9a;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .retry-button:hover {
+            background-color: #024d9a;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="banpais_logo_1.png" alt="Logo"> 
+    </div>
+    <div class="container">
+        <div class="content">
+            <img src="banpais_bp_logo_1.png" width="70px" height="70px" alt="Error Image"> 
+            <p>Error: Ha ocurrido un error de conexión inesperado, por favor vuelve a intentarlo</p>
+            <button class="retry-button" onclick="retry()">Reintentar</button>
+        </div>
+    </div>
+
+    <script>
+        function retry() {
+            window.location.href = 'index.html'; 
+        }
+    </script>
+</body>
+</html>
